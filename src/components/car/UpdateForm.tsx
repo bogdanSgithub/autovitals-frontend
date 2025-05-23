@@ -33,11 +33,11 @@ export function UpdateForm(props: {car: Car,  onUpdate: (updatedCar: {
         e.preventDefault()
 
         const updatedCar = {
-            _id: props.car._id,
-            model: newModel ?? props.car.model,
-            year: parseInt(newYear),
-            mileage: parseInt(newMileage),
-            url: newURL,
+            id: props.car._id,
+            newModel: newModel ?? props.car.model,
+            newYear: parseInt(newYear),
+            newMileage: parseInt(newMileage),
+            newURL: newURL,
             dateBought: new Date(newDateBought),
             userID: username
         };
@@ -57,7 +57,6 @@ export function UpdateForm(props: {car: Car,  onUpdate: (updatedCar: {
             alert("Error updating car: " + await response.text());
         }else {
             const car: Car = await response.json()
-
             alert(`Car was succerefully updated.`)
 
             props.onUpdate(car)

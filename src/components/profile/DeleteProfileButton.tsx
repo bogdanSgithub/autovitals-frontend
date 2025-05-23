@@ -57,7 +57,7 @@ export function DeleteProfileButton(props: {profile: Profile | undefined, adminD
     return (
     <>
         {hasProfile ? (
-          <button onClick={handleClick}>❌ Delete</button>
+          <button style={{backgroundColor: "red"}} onClick={handleClick}>Delete</button>
         ) : (
             <></>
         )}

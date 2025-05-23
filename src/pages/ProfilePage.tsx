@@ -39,7 +39,7 @@ export function ProfilePage(): JSX.Element {
         if (!params.username || params.username != username) {
             navigate(`/`);
         }
-    }, [username, navigate, profile]);
+    }, [username, navigate, profile, car]);
     
 
     function handleClick() {
