@@ -56,7 +56,7 @@ export function AddProfileForm({ username } : { username: string } ): JSX.Elemen
             return;
         }
         alert("profile was succesfully created");
-        const result = await response.json();
+        await response.json();
         navigate(`/profile/${username}`);
     }
     

@@ -35,7 +35,7 @@ export function SidebarSearch() {
   const params = useParams();
   const carId = params.carId;
   const [currentCar, setCurrentCar] = useState<Car | null>(null);
-  const [cookies, setCookie] = useCookies(['lastCarId']);
+  const [, setCookie] = useCookies(['lastCarId']);
   const onUpdate = (updatedCar: Car) => {
       setCurrentCar(updatedCar);
   }
@@ -175,7 +175,7 @@ useEffect(() => {
       };
 
       const response = await fetch(
-        `http://localhost:1339/maintenance/1/${originalCarPart}`,
+        `http://localhost:1339/maintenance/${carId}/${originalCarPart}`,
         {
           method: "PUT",
           headers: {

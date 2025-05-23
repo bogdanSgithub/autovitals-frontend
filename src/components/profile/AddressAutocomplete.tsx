@@ -1,5 +1,5 @@
 // Bogdan
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useLoadScript, StandaloneSearchBox } from '@react-google-maps/api';
 
 const libraries: ("places")[] = ["places"];

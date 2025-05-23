@@ -28,6 +28,13 @@ async function fetchCarDetails(geminiUrl: string, make: string, model: string, y
   return data?.candidates?.[0]?.content?.parts?.[0]?.text || "No data found.";
 }
 
+interface VehicleModel {
+  Model_ID: number;
+  Make_ID: number;
+  Make_Name: string;
+  Model_Name: string;
+}
+
 export default function VehicleSearchForm(): JSX.Element {
   const [makes, setMakes] = useState<string[]>([]);
   const [models, setModels] = useState<string[]>([]);
@@ -61,7 +68,7 @@ export default function VehicleSearchForm(): JSX.Element {
       const url = `https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/${make}?format=json`;
       const response = await fetch(url);
       const data = await response.json();
-      const modelNames: string[] = data.Results.map((model: any) => model.Model_Name);
+      const modelNames: string[] = data.Results.map((model: VehicleModel) => model.Model_Name);
       setModels(modelNames);
     } catch (error) {
       console.error("Failed to fetch models:", error);

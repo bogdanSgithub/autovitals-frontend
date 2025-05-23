@@ -1,5 +1,4 @@
 import { JSX } from "react";
-import { Car } from "./Car";
 
 /**
  * @summary A component that represents a button to delete a car from the database.

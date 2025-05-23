@@ -3,7 +3,7 @@ import { Maintenance } from "../maintenance/Maintenance";
 import { fetchAllMaintenances } from "../maintenance/FetchAllMaintenances";
 import { FaBell } from "react-icons/fa";
 import { Profile } from "../profile/Profile";
-import { fetchProfile } from "../profile/fetchProfile";
+import { fetchProfile } from "../profile/FetchProfile";
 
 /**
  * Bogdan

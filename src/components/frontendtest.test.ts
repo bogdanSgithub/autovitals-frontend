@@ -1,6 +1,6 @@
 import { afterEach } from 'node:test';
 import puppeteer, { Browser, Page } from 'puppeteer';
-import { beforeEach, beforeAll, test, expect, afterAll } from "vitest";
+import { beforeAll, test, expect, afterAll } from "vitest";
 
 
 let browser: Browser
@@ -82,7 +82,7 @@ test("Account created successfully", async () => {
     // click login button
     await page.click('#get-started');
 
-    let url = page.url();
+    const url = page.url();
     expect(url).toBe('http://localhost:5173/signup');
 
     let alertMessage = '';

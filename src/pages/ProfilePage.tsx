@@ -11,7 +11,7 @@ import NearbyMap from "../components/profile/NearbyMap";
 import { useNavigate, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { Car } from "../components/car/Car";
-import { fetchProfile } from "../components/profile/fetchProfile";
+import { fetchProfile } from "../components/profile/FetchProfile";
 import { AdminDashboard } from "../components/profile/AdminDashboard";
 import { AuthContext } from "../AuthContext";
 import { ThemeToggle } from "../components/profile/ThemeToggle";

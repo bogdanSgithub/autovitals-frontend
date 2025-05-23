@@ -2,11 +2,17 @@ import { JSX } from "react";
 import { NavLink } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
+interface NavButtonProps {
+  to: string;
+  className?: string;
+  label: string;
+}
+
 /**
  * Renders a button component wrapped in a `NavLink` for navigation.
  * Applies styles based on the `theme` cookie ("light" or "dark").
  */
-export function NavButton(props: any): JSX.Element {
+export function NavButton({ to, className, label }: NavButtonProps): JSX.Element {
   const [cookies] = useCookies(["theme"]);
   const theme = cookies.theme || "light";
 
@@ -26,9 +32,9 @@ export function NavButton(props: any): JSX.Element {
   };
 
   return (
-    <NavLink to={props.to}>
-      <button style={buttonStyle} id={props.className}>
-        <p style={pStyle}>{props.label}</p>
+    <NavLink to={to}>
+      <button style={buttonStyle} id={className}>
+        <p style={pStyle}>{label}</p>
       </button>
     </NavLink>
   );

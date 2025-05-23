@@ -15,6 +15,7 @@
     "react": "^19.0.0",
     "react-cookie": "^8.0.1",
     "react-dom": "^19.0.0",
+    "react-error-boundary": "^6.0.0",
     "react-router-dom": "^7.5.0",
     "vitest-puppeteer": "^11.0.3"
   },
