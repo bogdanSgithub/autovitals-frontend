@@ -57,7 +57,7 @@ export function ProfilePage(): JSX.Element {
                 <>  
                     <ThemeToggle/>
                     <UpdateProfileButton profile={profile} setProfile={setProfile} />
-                    <DeleteProfileButton profile={profile} />
+                    <DeleteProfileButton adminDelete={false} profile={profile} />
                     {cookies.lastCarId && (
                         <button onClick={handleClick}>Go Back to your Last Viewed Car</button>
                     )}

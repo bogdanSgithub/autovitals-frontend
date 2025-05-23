@@ -15,7 +15,7 @@ export function AllProfiles(): JSX.Element {
 
     useEffect(() => {
         fetchAllProfiles();
-    }, []);
+    }, [profiles]);
 
     async function fetchAllProfiles() {
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profiles`, { method: "GET", credentials: "include" });
@@ -24,6 +24,6 @@ export function AllProfiles(): JSX.Element {
     }
 
     return (
-        <ListProfiles profiles={profiles}/>
+        <ListProfiles deleteAdmin={true} profiles={profiles}/>
     )
 }

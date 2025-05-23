@@ -11,18 +11,20 @@ import { useContext } from "react";
  * @param {profile | undefined} props.profile - The profile to delete. If undefined or incomplete, the button will not render.
  * @returns {JSX.Element} The DeleteprofileButton component.
  */
-export function DeleteProfileButton(props: {profile: Profile | undefined}): JSX.Element {    
+export function DeleteProfileButton(props: {profile: Profile | undefined, adminDelete: boolean}): JSX.Element {    
     const hasProfile = props.profile?.email && props.profile?.username;
     const navigate = useNavigate();
     const { setIsLoggedIn, setUsername  } = useContext(AuthContext);
 
-    async function deleteProfile(username: string) {
+    async function deleteProfile() {
+        alert(`tryna delete ${props.profile?.username} ${props.adminDelete}`)
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profiles`, 
             { 
                 method: "DELETE",
                 
               body: JSON.stringify({
-                    username: username
+                    username: props.profile?.username,
+                    isAdminDelete: props.adminDelete
                 }),
               headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -35,11 +37,12 @@ export function DeleteProfileButton(props: {profile: Profile | undefined}): JSX.
             alert(message);
             return;
         }
-        alert("profile was succesfully deleted");
-        setIsLoggedIn(false);
-        setUsername('');
-        navigate("/");
-
+        alert(`profile ${props.profile?.username} was succesfully deleted`);
+        if (!props.adminDelete) {
+            setIsLoggedIn(false);
+            setUsername('');
+            navigate("/");
+        }
     }
 
     async function handleClick() {
@@ -48,8 +51,7 @@ export function DeleteProfileButton(props: {profile: Profile | undefined}): JSX.
             return;
         }
         
-        await deleteProfile(props.profile.username);
-        navigate("/");
+        await deleteProfile();
     }
 
     return (

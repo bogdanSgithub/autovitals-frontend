@@ -1,6 +1,8 @@
 import { useState, CSSProperties } from "react";
 import { AllProfiles } from "./AllProfiles";
-type TabKey = "profiles" | "cars" | "maintenances";
+import { AllMaintenances } from "../maintenance/AllMaintenances";
+
+type TabKey = "profiles" | "maintenances";
 
 export function AdminDashboard() {
     const [activeTab, setActiveTab] = useState<TabKey>("profiles");
@@ -9,10 +11,8 @@ export function AdminDashboard() {
     switch (activeTab) {
         case "profiles":
             return <AllProfiles/>;
-        case "cars":
-            return <>Cars</>;
         case "maintenances":
-            return <>Maintenances</>;
+            return <AllMaintenances/>;
         }
     };
 
@@ -23,11 +23,6 @@ export function AdminDashboard() {
           label="Profiles"
           isActive={activeTab === "profiles"}
           onClick={() => setActiveTab("profiles")}
-        />
-        <TabButton
-          label="Cars"
-          isActive={activeTab === "cars"}
-          onClick={() => setActiveTab("cars")}
         />
         <TabButton
           label="Maintenances"
