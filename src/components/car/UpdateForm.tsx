@@ -1,6 +1,8 @@
 import { JSX, useState } from "react";
 import { Car } from "./Car";
 import './Forms.css';
+import { AuthContext } from "../../AuthContext";
+import { useContext } from "react";
 
 /**
  * @summary The UpdateForm component is a form that allows the user to update a car's model and year.
@@ -10,25 +12,35 @@ import './Forms.css';
  * @param props.onUpdate - The function to call when the car is updated, so that the parent component can update its state.
  * @returns The form for updating a car.
  */
-export function UpdateForm(props: {car: Car, onUpdate: (updatedCar: {model: string, year: number, mileage: number, url: string, dateBought: Date, _id: string}) => void}): JSX.Element {
+export function UpdateForm(props: {car: Car,  onUpdate: (updatedCar: {
+    model: string,
+    year: number,
+    mileage: number,
+    url: string,
+    dateBought: Date,
+    _id: string,
+    userID: string   // Add this userID here
+  }) => void}): JSX.Element {
     const [newModel, setModel] = useState<string | null>(null)
     const [newYear, setYear] = useState<string>("")
     const [newMileage, setMileage] = useState<string>("")
     const [newDateBought, setDateBought] = useState<string>("")
     const [newURL, setUrl] = useState<string>("")
+    const { username  } = useContext(AuthContext);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>){
         //stop page from reloading on submit
         e.preventDefault()
 
         const updatedCar = {
-            id: props.car._id,
-            newModel: newModel,
-            newYear: parseInt(newYear),
-            newMileage: newMileage,
-            newDateBought: newDateBought,
-            newURL: newURL
-        }
+            _id: props.car._id,
+            model: newModel ?? props.car.model,
+            year: parseInt(newYear),
+            mileage: parseInt(newMileage),
+            url: newURL,
+            dateBought: new Date(newDateBought),
+            userID: username
+        };
 
          // add options for the request, since it is a put we need to specify the body.
         const requestOptions = {
