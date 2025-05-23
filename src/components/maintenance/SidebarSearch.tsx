@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "./modal";
 import SearchBar from "./searchbar";
 import "./sidebarLinks.css";
-import "./sidebarSearch.css";
+import "./SidebarSearch.css";
 import RecordList from "./recordList";
 import { useNavigate, useParams } from "react-router-dom";
 import { Maintenance } from "./Maintenance";
