@@ -1,0 +1,16 @@
+.CommonProblemFormSearchButton {
+    background-color: #1f365e;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .CommonProblemFormSearchButton:hover {
+    background-color: #15284a !important;
+  }
+  

@@ -1,0 +1,41 @@
+.ResultsContainer {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .ResultsContainer h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1a2e45;
+    text-align: center;
+  }
+  
+  .ResultsContainer ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .ResultsContainer li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

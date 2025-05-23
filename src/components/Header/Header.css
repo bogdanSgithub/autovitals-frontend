@@ -1,0 +1,63 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--navbar-bg, #f9fbfc);
+  font-family: sans-serif;
+  color: var(--text);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary, #1f365e);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.navbar-center a {
+  margin: 0 1rem;
+  color: var(--link, #4a4a4a);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-center a:hover {
+  color: var(--primary, #1f365e);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-icon {
+  font-size: 1rem;
+}
+
+.signin {
+  color: var(--text, #000);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.get-started {
+  background-color: var(--button-bg, #1f365e);
+  color: var(--button-text, white);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.get-started:hover {
+  background-color: var(--button-hover, #162845);
+}

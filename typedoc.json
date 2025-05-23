@@ -1,0 +1,3 @@
+{
+    "entryPoints": ["src/App.tsx", "src/components/*.tsx", "src/pages/*.tsx"],
+}

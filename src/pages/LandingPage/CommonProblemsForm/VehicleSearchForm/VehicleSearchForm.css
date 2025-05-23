@@ -1,0 +1,42 @@
+.vehicle-search-form {
+    width: 120%;
+    padding: 5em 15em 5em 5em ;
+    background-color: #f3f9fc;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 150px;
+    flex: 1;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  
+  .form-group select,
+  .form-group input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f9fbfc;
+  }
+  
+  .button-group {
+    flex: none;
+  }
+  
