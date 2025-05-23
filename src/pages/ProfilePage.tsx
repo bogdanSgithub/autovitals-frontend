@@ -59,7 +59,7 @@ export function ProfilePage(): JSX.Element {
                     <UpdateProfileButton profile={profile} setProfile={setProfile} />
                     <DeleteProfileButton adminDelete={false} profile={profile} />
                 </div>
-                <div style={{ flex: 1, margin: '5px' }}>
+                <div style={{ flex: 1, margin: '5px', minWidth: "500px" }}>
                 <NearbyMap location={{ lat: profile.coordinates[0], lng: profile.coordinates[1] }} />
                 </div>
             </div>

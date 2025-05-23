@@ -24,11 +24,6 @@ export function Header() {
         </div>
       </> : 
       <>
-        <div className="navbar-center">
-          <a href="#features">Features</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#testimonials">Testimonials</a>
-        </div>
         <div className="navbar-right">
           <FaUser className="user-icon" />
           <NavButton className="" to="/login" label="Login"/>
