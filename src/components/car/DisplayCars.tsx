@@ -8,16 +8,27 @@ import { DisplayCar } from "./DisplayCar";
  * @param props.cars The cars to display.
  * @returns The cars in the database.
  */
-export function DisplayCars(props: {cars: Car[]}): JSX.Element {
-
-    const carList = props.cars.map((car) => (
-        <DisplayCar key={car._id} car={car} />
-    ));
-    
-    return (
-        <div>
-            {carList}
+export function DisplayCars(props: { cars: Car[] }): JSX.Element {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "20px",
+        justifyContent: "space-between",
+      }}
+    >
+      {props.cars.map((car) => (
+        <div
+          key={car._id}
+          style={{
+            flex: "1 1 calc(33.33% - 20px)",
+            boxSizing: "border-box",
+          }}
+        >
+          <DisplayCar car={car} />
         </div>
-    );
-    
+      ))}
+    </div>
+  );
 }

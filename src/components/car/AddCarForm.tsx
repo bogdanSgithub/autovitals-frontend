@@ -67,8 +67,8 @@ export function AddCarForm({ setAddedCar }: { setAddedCar: (car: Car) => void })
         <input type="number" placeholder="Year" onChange={(e) => setYear(e.target.value)} required></input>
         <br/>
 
-        <label htmlFor="Year">Mileage: </label>
-        <input type="number" placeholder="Year" onChange={(e) => setMileage(e.target.value)} required></input>
+        <label htmlFor="Mileage">Mileage: </label>
+        <input type="number" placeholder="Mileage" onChange={(e) => setMileage(e.target.value)} required></input>
         <br/>
 
         <label htmlFor="Year">Date Bought: </label>
@@ -78,7 +78,7 @@ export function AddCarForm({ setAddedCar }: { setAddedCar: (car: Car) => void })
         <label htmlFor="Year">URL: </label>
         <input type="text" placeholder="URL" onChange={(e) => setUrl(e.target.value)}></input>
         <br/>
-        <button type="submit" className="form-button">Add Car</button>
+        <button style={{marginBottom: "10px"}} type="submit" className="form-button">Add Car</button>
        </form>
        </>
     )

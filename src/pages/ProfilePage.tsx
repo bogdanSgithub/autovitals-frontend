@@ -52,18 +52,26 @@ export function ProfilePage(): JSX.Element {
 
     return (
         <>  
-            <DisplayProfile profile={profile}/>
             {profile && (
-                <>  
-                    <ThemeToggle/>
+            <div style={{ display: 'flex', gap: '20px', width: '100%', marginBottom: "20px", marginTop: "10px" }}>
+                <div style={{ flex: 1 }}>
+                    <DisplayProfile profile={profile} />
                     <UpdateProfileButton profile={profile} setProfile={setProfile} />
                     <DeleteProfileButton adminDelete={false} profile={profile} />
+                </div>
+                <div style={{ flex: 1, margin: '5px' }}>
+                <NearbyMap location={{ lat: profile.coordinates[0], lng: profile.coordinates[1] }} />
+                </div>
+            </div>
+            )}
+            {profile && (
+                <> 
+                    <ThemeToggle/>
                     {cookies.lastCarId && (
                         <button onClick={handleClick}>Go Back to your Last Viewed Car</button>
                     )}
                     <ReadAllCars username={username} refreshTrigger={car}/>
                     <AddCarButton setAddedCar={setAddedCar}/>
-                    <NearbyMap location={{lat: profile.coordinates[0], lng: profile.coordinates[1]}}/>
                     {profile.isAdmin && <AdminDashboard/>}
                 </>
             )}

@@ -14,7 +14,7 @@ interface NearbyMapProps {
   type?: string;
 }
 
-const NearbyMap: React.FC<NearbyMapProps> = ({ location, radius = 10000, type = "car_repair" }) => {
+const NearbyMap: React.FC<NearbyMapProps> = ({ location, radius = 100, type = "car_repair" }) => {
   const apiKey = "AIzaSyChjODftywEX8bMWLCcoxmelouLHd2AcrY";
 
   if (!apiKey) {
