@@ -73,39 +73,51 @@ export function DisplayNotifications(props: { id: string, model: string, userID:
 
     return (
         <>
-            <style>
-                {`
-                    .notification-bell {
-                        position: relative;
-                        display: inline-block;
-                        font-size: 24px;
-                        cursor: pointer;
-                    }
-
-                    .notification-bell .icon {
-                        color: #4fa3f7; /* Skyblue bell */
-                    }
-
-                    .notification-bell .count {
-                        position: absolute;
-                        top: -4px;
-                        right: -4px;
-                        background-color: red;
-                        color: white;
-                        font-size: 12px;
-                        border-radius: 50%;
-                        padding: 2px 4px; /* Adjusted for smaller width */
-                        min-width: 16px; /* Smaller width */
-                        text-align: center;
-                    }
-                `}
-            </style>
-            {maintenances.length > 0 &&
-                <div className="notification-bell">
-                    <FaBell className="icon" size={32} />
-                    <div className="count">{maintenances.length}</div>
-                </div>
+              <style>
+            {`
+            .notification-wrapper {
+                position: relative;
+                height: 100%;
+                padding: 4px;
             }
+
+            .notification-bell {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                font-size: 24px;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            .notification-bell .icon {
+                color: #4fa3f7; /* Skyblue bell */
+            }
+
+            .notification-bell .count {
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                background-color: red;
+                color: white;
+                font-size: 12px;
+                border-radius: 50%;
+                padding: 2px 4px;
+                min-width: 16px;
+                text-align: center;
+            }
+            `}
+        </style>
+
+        {maintenances.length > 0 &&
+            <div className="notification-wrapper">
+            <div className="notification-bell">
+                <FaBell className="icon" size={32} />
+                <div className="count">{maintenances.length}</div>
+            </div>
+            </div>
+        }
         </>
     );
 }

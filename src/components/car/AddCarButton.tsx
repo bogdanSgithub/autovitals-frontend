@@ -17,7 +17,7 @@ export function AddCarButton({ setAddedCar }: { setAddedCar: (car: Car) => void 
 
     return (
     <>
-        <button onClick={() => setIsModalOpen(true)}>Add Car Button</button>
+        <button onClick={() => setIsModalOpen(true)}>Add Car</button>
 
         {isModalOpen && username && (
             <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>

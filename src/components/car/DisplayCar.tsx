@@ -17,12 +17,12 @@ export function DisplayCar(props: {car: Car}): JSX.Element {
             <div className="car-card">
             <DisplayCarImage car={props.car}/>
             <div className="car-info">
-                <p className="car-model">Model: {props.car.model}</p>
-                <p className="car-year">Year: {props.car.year}</p>
+                <p className="car-model">{props.car.model}</p>
+                <p className="car-year">{props.car.year}</p>
                 <DeleteButton id={props.car._id} />
             </div>
-            </div>
             <DisplayNotifications id={props.car._id} model={props.car.model} userID={props.car.userID}/>
+            </div>
         </div>
     )
 }

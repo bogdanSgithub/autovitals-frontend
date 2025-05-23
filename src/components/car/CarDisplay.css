@@ -1,21 +1,22 @@
 .car-card {
     display: flex;
     align-items: center;
-    background-color: white;
     padding: 16px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     margin: 12px auto;
-    max-width: 600px;
+    max-width: 360px;
+    min-width: 350px;
     gap: 20px;
-    border: black solid 5px;
+    border: var(--button-bg) solid 3px;
   }
   
   .car-card img {
-    width: 160px;
+    width: 180px;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
+    padding: 0;
   }
   
   .car-info {
@@ -26,20 +27,17 @@
   }
   
   .car-model {
-    font-size: 18px;
+    font-size: 21px;
     font-weight: bold;
     margin: 0 0 6px 0;
-    color: #333;
   }
   
   .car-year {
     font-size: 16px;
-    color: #555;
     margin: 0 0 12px 0;
   }
   
   .form-button {
-    background-color: #007bff;
     color: white;
     padding: 10px 16px;
     border: none;

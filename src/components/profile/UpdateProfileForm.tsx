@@ -64,13 +64,13 @@ export function UpdateProfileForm({ profile, setProfile } : { profile: Profile |
     <div className="form-container">  
         <form onSubmit={handleSubmit} className="form">
             <label htmlFor="newEmail">New Email</label>
-            <input type="text" placeholder="New Email" onChange={(e) => setNewEmail(e.target.value)} required/>
+            <input type="text" placeholder={profile?.email} onChange={(e) => setNewEmail(e.target.value)} required />
 
             <label htmlFor="location">Location</label>
             <AddressAutocomplete setCoords={setCoords}/>
             
             <label htmlFor="emailReminderPreference">Email Reminder Preference</label>
-                <select id="emailReminderPreference" value={newEmailReminderPreference || ''} onChange={(e) => setNewEmailReminderPreference(e.target.value as 'none' | '1_day' | '3_days')} required>
+                <select id="emailReminderPreference" value={newEmailReminderPreference || profile?.emailReminderPreference} onChange={(e) => setNewEmailReminderPreference(e.target.value as 'none' | '1_day' | '3_days')} required>
                     <option value="none">None</option>
                     <option value="1_day">1 Day Before</option>
                     <option value="3_days">3 Days Before</option>
