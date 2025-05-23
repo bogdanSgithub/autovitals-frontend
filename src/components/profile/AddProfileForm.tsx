@@ -35,7 +35,7 @@ export function AddProfileForm({ username } : { username: string } ): JSX.Elemen
             alert("must have coords");
             return;
         }
-        const response = await fetch("http://localhost:1339/profiles", 
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profiles`, 
             { method: "POST",
             credentials: "include",
               body: JSON.stringify({

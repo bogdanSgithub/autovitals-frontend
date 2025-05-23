@@ -39,7 +39,7 @@ export function AddCarForm({ setAddedCar }: { setAddedCar: (car: Car) => void })
         }
 
         try{
-            const response = await fetch('http://localhost:1339/cars', requestOptions)
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cars`, requestOptions)
 
             if (!response.ok) {
                 alert("Error adding car: " + await response.text());

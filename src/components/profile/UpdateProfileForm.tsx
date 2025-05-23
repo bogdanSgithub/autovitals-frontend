@@ -29,7 +29,7 @@ export function UpdateProfileForm({ profile, setProfile } : { profile: Profile |
     }
 
     async function updateProfile(username: string, newEmail: string, coords: {lat: number, lng: number}, newEmailReminderPreference: string) {
-        const response = await fetch("http://localhost:1339/profiles", 
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profiles`, 
             { method: "PUT", 
               body: JSON.stringify({
                     email: newEmail,

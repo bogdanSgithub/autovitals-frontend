@@ -18,7 +18,7 @@ export function AllProfiles(): JSX.Element {
     }, []);
 
     async function fetchAllProfiles() {
-        const response = await fetch("http://localhost:1339/profiles", { method: "GET", credentials: "include" });
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profiles`, { method: "GET", credentials: "include" });
         const result = await response.json();
         setProfiles(result);
     }

@@ -9,7 +9,7 @@ import { Maintenance } from "./Maintenance";
  */
 export async function fetchAllMaintenances(carId: string, setMaintenances: (maintenances: Maintenance[]) => void) {
     try {
-      const response = await fetch(`http://localhost:1339/maintenance/${carId}`, {
+      const response = await fetch(`{import.meta.env.VITE_BACKEND_URL}/maintenance/${carId}`, {
       credentials: "include",
     });
       const data = await response.json();

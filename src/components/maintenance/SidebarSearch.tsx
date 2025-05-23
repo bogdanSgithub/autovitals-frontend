@@ -61,7 +61,7 @@ useEffect(() => {
 
   async function fetchCar() {
     try {
-      const response = await fetch(`http://localhost:1339/cars/${carId}`);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cars/${carId}`);
 
       const data = await response.json();
       setCurrentCar(data);
@@ -94,7 +94,7 @@ useEffect(() => {
       return;
     }
     const res = await fetch(
-      `http://localhost:1339/maintenance/${carId}/${carPart}`,
+      `${import.meta.env.VITE_BACKEND_URL}/maintenance/${carId}/${carPart}`,
       {
         method: "DELETE",
       }
@@ -125,7 +125,7 @@ useEffect(() => {
         fetchAllMaintenances(carId!, setRecords);
       } else {
         const response = await fetch(
-         `http://localhost:1339/maintenance/${carId}/${newSearch}`
+         `${import.meta.env.VITE_BACKEND_URL}/maintenance/${carId}/${newSearch}`
         );
         const data = await response.json();
         if (data && typeof data === "object" && !Array.isArray(data)) {
@@ -175,7 +175,7 @@ useEffect(() => {
       };
 
       const response = await fetch(
-        `http://localhost:1339/maintenance/${carId}/${originalCarPart}`,
+        `${import.meta.env.VITE_BACKEND_URL}/maintenance/${carId}/${originalCarPart}`,
         {
           method: "PUT",
           headers: {

@@ -7,7 +7,7 @@ let browser: Browser
 let page: Page;
 
 afterEach(async () => {
-   const response = await fetch("http://localhost:1339/profiles", 
+   const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profiles`, 
         { 
             method: "DELETE",
             

@@ -84,7 +84,7 @@ export function AddMaintenanceRecordsForm(): JSX.Element {
     console.log("🧾 Record being sent:", record);
   
     try {
-      const response = await fetch('http://localhost:1339/maintenance', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/maintenance`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

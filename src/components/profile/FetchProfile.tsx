@@ -4,7 +4,7 @@ export async function fetchProfile(username: string | undefined, setProfile: (pr
     console.log("too many times")
     
     if (!username || username === ":username") return;
-    const response = await fetch(`http://localhost:1339/profile/${username}`, {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profile/${username}`, {
         method: "GET",
         credentials: "include"
     });

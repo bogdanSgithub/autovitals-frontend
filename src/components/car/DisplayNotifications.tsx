@@ -41,7 +41,7 @@ export function DisplayNotifications(props: { id: string, model: string, userID:
                         return;
                         }
                         
-                        const response = await fetch(`http://localhost:1339/profiles/emailReminder`, {
+                        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profiles/emailReminder`, {
                             method: "POST",
                             credentials: "include",
                             headers: {

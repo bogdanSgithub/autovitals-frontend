@@ -17,7 +17,7 @@ export function DeleteProfileButton(props: {profile: Profile | undefined}): JSX.
     const { setIsLoggedIn, setUsername  } = useContext(AuthContext);
 
     async function deleteProfile(username: string) {
-        const response = await fetch("http://localhost:1339/profiles", 
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/profiles`, 
             { 
                 method: "DELETE",
                 

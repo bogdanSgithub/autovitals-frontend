@@ -39,7 +39,7 @@ export function UpdateForm(props: {car: Car, onUpdate: (updatedCar: {model: stri
             }
         }
 
-        const response = await fetch('http://localhost:1339/cars/', requestOptions)
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cars/`, requestOptions)
         
         if (!response.ok) {
             alert("Error updating car: " + await response.text());

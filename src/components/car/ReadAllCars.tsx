@@ -12,7 +12,7 @@ export function ReadAllCars({ username, refreshTrigger }: { username: string, re
     // on load and whenever refreshTrigger changes, fetch cars
     useEffect(() => {
         const fetchCars = async () => {
-            const response = await fetch(`http://localhost:1339/cars/all/${username}`);
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cars/all/${username}`);
             const data: Car[] = await response.json();
             console.log(data);
             setCars(data);

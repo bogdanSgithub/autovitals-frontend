@@ -28,7 +28,7 @@ export function SignUpForm(): JSX.Element {
     }
 
     async function register(username: string, password: string) {
-        const response = await fetch("http://localhost:1339/users/register", 
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/users/register`, 
             { method: "POST", 
               credentials: "include",
               body: JSON.stringify({

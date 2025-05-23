@@ -12,7 +12,7 @@ export function LogoutButton(): JSX.Element {
     const { isLoggedIn, setIsLoggedIn, setUsername } = useContext(AuthContext);
 
     async function logout() {
-        const response = await fetch("http://localhost:1339/session/logout", 
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/session/logout`, 
             { method: "GET",
               credentials: 'include',
               headers: {

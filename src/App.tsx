@@ -22,7 +22,7 @@ function App() {
     async function checkForLoggedIn() {
       try {
         /** Call auth, passing cookies to the back-end */
-        const response = await fetch("http://localhost:1339/session/auth", { method: "GET", credentials: "include" });
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/session/auth`, { method: "GET", credentials: "include" });
         if (response.status === 200) {
           setIsLoggedIn(true);
           const user = await response.text();

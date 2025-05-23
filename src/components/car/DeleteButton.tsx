@@ -10,7 +10,7 @@ import { JSX } from "react";
 export function DeleteButton(props: {id: string}) : JSX.Element {
 
     async function handleDelete(){         
-        const response = await fetch(`http://localhost:1339/cars/${props.id}`, {method: "DELETE"});
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/cars/${props.id}`, {method: "DELETE"});
  
  
         // if status is 200

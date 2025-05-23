@@ -25,7 +25,7 @@ export function LoginForm(): JSX.Element {
     }
 
     async function login(username: string, password: string) {
-        const response = await fetch("http://localhost:1339/session/login", 
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/session/login`, 
             { method: "POST",
               credentials: 'include',
               body: JSON.stringify({
@@ -45,6 +45,7 @@ export function LoginForm(): JSX.Element {
         }
         else {
             const message = await response.text();
+            console.log(message)
             alert(message);
             setIsLoggedIn(false);
             return;
