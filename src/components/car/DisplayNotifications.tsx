@@ -5,10 +5,13 @@ import { FaBell } from "react-icons/fa";
 import { Profile } from "../profile/Profile";
 import { fetchProfile } from "../profile/FetchProfile";
 
+
 /**
- * Bogdan
- * @param props 
- * @returns 
+ * DisplayNotifications component that fetches and displays notifications for upcoming maintenances.
+ * @param {string} id - The ID of the car.
+ * @param {string} model - The model of the car.
+ * @param {string} userID - The ID of the user.
+ * @returns {JSX.Element} The rendered notification bell with the count of upcoming maintenances.
  */
 export function DisplayNotifications(props: { id: string, model: string, userID: string }): JSX.Element {
     const [maintenances, setMaintenances] = useState<Maintenance[]>([]);

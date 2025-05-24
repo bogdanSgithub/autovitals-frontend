@@ -5,6 +5,10 @@ import { AuthContext } from "../../AuthContext";
 import { useContext } from "react";
 import { LogoutButton } from "../user/LogoutButton";
 
+/**
+ * Header component that displays the navigation bar with logo and user options.
+ * @returns {JSX.Element} The rendered header component.
+ */
 export function Header() {
   const { isLoggedIn, username  } = useContext(AuthContext);
   console.log(isLoggedIn);

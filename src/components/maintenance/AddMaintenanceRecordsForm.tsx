@@ -2,6 +2,11 @@ import { useState, JSX, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './AddMaintenanceRecordsForm.css';
 
+
+/**
+ * AddMaintenanceRecordsForm component that allows users to add maintenance records for their cars.
+ * @returns {JSX.Element} The rendered form for adding maintenance records.
+ */
 export function AddMaintenanceRecordsForm(): JSX.Element {
   const [carPart, setCarPart] = useState('');
   const [lastChanged, setLastChanged] = useState('');

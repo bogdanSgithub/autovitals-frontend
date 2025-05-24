@@ -4,6 +4,11 @@ import { AllMaintenances } from "../maintenance/AllMaintenances";
 
 type TabKey = "profiles" | "maintenances";
 
+
+/**
+ * AdminDashboard component that displays a dashboard for admin users to manage profiles and maintenances.
+ * @returns {JSX.Element} The rendered AdminDashboard component.
+ */
 export function AdminDashboard() {
     const [activeTab, setActiveTab] = useState<TabKey>("profiles");
 

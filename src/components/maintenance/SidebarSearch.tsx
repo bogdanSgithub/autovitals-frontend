@@ -13,15 +13,13 @@ import { AuthContext } from "../../AuthContext";
 import { useContext } from "react";
 import { useCookies } from "react-cookie";
 
+
+
 /**
- * A sidebar component for searching and viewing maintenance records.
- *
- * This component displays a list of up to 10 maintenance records that match
- * the search query. It also displays a search input field and a button to
- * add a new record. When a record is selected, it displays the record's details
- * in a modal window with options to edit or delete the record.
- *
- **/
+ * SidebarSearch component that displays a sidebar for searching and managing
+ * maintenance records of a car.
+ * @returns {JSX.Element} The rendered SidebarSearch component.
+ */
 export function SidebarSearch() {
   const { username  } = useContext(AuthContext);
   const [search, setSearch] = useState("");
@@ -215,7 +213,7 @@ useEffect(() => {
       <h2 className="sidebar-title">🔧 Maintenance Records</h2>
       <SearchBar search={search} onSearchChange={handleSearchChangeAndFetch} />
       <nav className="sidebar-links">
-        <button onClick={handleAdd}>➕ Add Record</button>
+        <button onClick={handleAdd} id="addRecord">➕ Add Record</button>
       </nav>
       <RecordList
         records={records}

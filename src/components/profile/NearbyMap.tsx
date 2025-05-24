@@ -14,6 +14,15 @@ interface NearbyMapProps {
   type?: string;
 }
 
+
+/**
+ * NearbyMap component that displays a Google Map with nearby places based on the provided location.
+ * @param {Object} props - The component props.
+ * @param {Object} props.location - The latitude and longitude of the location to center the map on.
+ * @param {number} [props.radius=100] - The radius (in meters) to search for nearby places.
+ * @param {string} [props.type="car_repair"] - The type of places to search for (e.g., "car_repair").
+ * @returns {JSX.Element} The rendered NearbyMap component.
+ */
 const NearbyMap: React.FC<NearbyMapProps> = ({ location, radius = 100, type = "car_repair" }) => {
   const apiKey = "AIzaSyChjODftywEX8bMWLCcoxmelouLHd2AcrY";
 

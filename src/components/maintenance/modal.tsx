@@ -11,6 +11,11 @@ interface ModalProps {
   onCancelEdit: () => void;
 }
 
+/**
+ * Modal component for displaying and editing maintenance records.
+ * @param {ModalProps} props - The props for the modal component.
+ * @returns {JSX.Element} The rendered modal component.
+ */
 export default function Modal({
   record,
   isEditing,

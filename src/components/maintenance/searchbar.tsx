@@ -6,6 +6,8 @@ interface SearchBarProps {
     onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   }
   
+
+
 export default function SearchBar({ search, onSearchChange, }: SearchBarProps) : JSX.Element {
     return (
       <div className="search-section">

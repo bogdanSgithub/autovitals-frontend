@@ -53,7 +53,7 @@ export function ProfilePage(): JSX.Element {
     return (
         <>  
             {profile && (
-            <div style={{ display: 'flex', gap: '20px', width: '100%', marginBottom: "20px", marginTop: "10px" }}>
+            <div style={{ display: 'flex', gap: '20px', width: '100%', marginBottom: "20px", marginTop: "10px" }} id="profile-container">
                 <div style={{ flex: 1 }}>
                     <DisplayProfile profile={profile} />
                     <UpdateProfileButton profile={profile} setProfile={setProfile} />

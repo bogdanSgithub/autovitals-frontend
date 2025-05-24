@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthContext";
 
 /**
+ * LoginForm component that allows users to log in to their profile.
+ * @returns {JSX.Element} The rendered login form.
  */
 export function LoginForm(): JSX.Element {
     const [inputUsername, setInputUsername] = useState<string | null>(null);

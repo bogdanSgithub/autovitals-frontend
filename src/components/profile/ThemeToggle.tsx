@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 
+
+/**
+ * ThemeToggle component that allows users to switch between light and dark themes.
+ * It uses cookies to remember the user's theme preference.
+ * @returns {JSX.Element} The rendered ThemeToggle button.
+ */
 export function ThemeToggle() {
     const [cookies, setCookie] = useCookies(["theme"]);
     const currentTheme = cookies.theme || "light";

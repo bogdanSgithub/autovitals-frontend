@@ -8,6 +8,12 @@ interface RecordListProps {
   onDelete: (carPart: string) => void;
 }
 
+
+/**
+ * RecordList component that displays a list of maintenance records.
+ * @param {RecordListProps} props - The props for the RecordList component.
+ * @returns {JSX.Element} The rendered RecordList component.
+ */
 export default function RecordList({
   records,
   onSelect,

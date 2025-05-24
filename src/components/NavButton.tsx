@@ -9,8 +9,10 @@ interface NavButtonProps {
 }
 
 /**
- * Renders a button component wrapped in a `NavLink` for navigation.
- * Applies styles based on the `theme` cookie ("light" or "dark").
+ * NavButton component that renders a button styled as a navigation link.
+ * It uses cookies to determine the current theme (light or dark) for styling.
+ * @param {NavButtonProps} props - The properties for the NavButton component.
+ * @returns {JSX.Element} The rendered NavButton component.
  */
 export function NavButton({ to, className, label }: NavButtonProps): JSX.Element {
   const [cookies] = useCookies(["theme"]);

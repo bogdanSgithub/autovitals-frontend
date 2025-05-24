@@ -2,6 +2,11 @@ import { JSX } from "react";
 import HeroSection from "./LandingPage/heroSection/heroSection";
 import { CommonProblemsForm } from "./LandingPage/CommonProblemsForm/CommonProblemsForm";
 
+/**
+ * Home component that serves as the landing page of the application.
+ * It includes a hero section, a form for common problems, and information about the team and inspiration.
+ * @returns {JSX.Element} The rendered Home component.
+ */
 export function Home(): JSX.Element {
     return (
         <>  

@@ -5,6 +5,9 @@ import { AuthContext } from "../../AuthContext";
 import { useCookies } from 'react-cookie';
 
 /**
+ * LogoutButton component that allows users to log out of their profile.
+ * It uses cookies to manage session data.
+ * @returns {JSX.Element} The rendered Logout button.
  */
 export function LogoutButton(): JSX.Element {
     const navigate = useNavigate();

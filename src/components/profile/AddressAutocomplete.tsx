@@ -4,6 +4,11 @@ import { useLoadScript, StandaloneSearchBox } from '@react-google-maps/api';
 
 const libraries: ("places")[] = ["places"];
 
+/**
+ * AddressAutocomplete component that provides an address input field with Google Maps Places Autocomplete functionality.
+ * @param {function} setCoords - Function to set the coordinates based on the selected address.
+ * @returns {JSX.Element} The rendered AddressAutocomplete component.
+ */
 const AddressAutocomplete = ({ setCoords }: { setCoords: (latLng: { lat: number; lng: number }) => void }) => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: 'AIzaSyChjODftywEX8bMWLCcoxmelouLHd2AcrY&libraries',
